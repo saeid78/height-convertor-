@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Height Convertor</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h1 class="display-3 text-center mb-3">Heigth Converotr</h1>
+          <br>
+          <form>
+            <div class="form-group">
+              <label  for="exampleSelect2">Enter your height:</label>
+              <input type="number" class="form-control form-control-lg" id="heigth" placeholder="Enter the heigth...">
+            </div>
+
+
+          <div class="form-group">
+            <label  for="exampleSelect2">Select your heigth type:</label>
+            <select class="form-control" id="heigthtype">
+
+              <option value="CM">CM</option>
+              <option value="Feet">Feet</option>
+
+
+            </select>
+          </div>
+            </form>
+          <div id="output">
+            <div class="card card-success mb-2">
+              <div class="card-block">
+                <h4>Feet:</h4>
+                <div id="ftoutput"></div>
+            </div>
+          </div>
+        </div>
+        <div id="output">
+          <div class="card card-danger mb-2">
+            <div class="card-block">
+              <h4>Meters:</h4>
+              <div id="cmoutput"></div>
+          </div>
+        </div>
+      </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+  /*  document.getElementById('heigth').addEventListener('input', function(e) {
+      //console.log("There we go!");
+          let hgt = e.target.value*3.2808;
+          let result = hgt.toFixed(1);
+        //  console.log(hgt);
+        document.getElementById('ftoutput').innerHTML = result;
+
+
+    });*/
+
+    document.getElementById('heigthtype').addEventListener('change', function(e){
+
+        let val1 = e.target.value;
+
+        let val =  document.getElementById('heigth').value;
+
+           console.log(val);
+
+        if ( val1 == 'CM') {
+          let hgt1 = val/3.2808;
+          let result = hgt1.toFixed(2);
+          //  console.log(hgt);
+          document.getElementById('cmoutput').innerHTML = result;
+        } else if (val1 == 'Feet') {
+          let hgt = val*3.2808;
+          let result1 = hgt.toFixed(1);
+        //  console.log(hgt);
+        document.getElementById('ftoutput').innerHTML = result1;
+        }
+
+
+    });
+    </script>
+</body>
+</html>
